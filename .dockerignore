@@ -1,0 +1,11 @@
+.idea
+*.iml
+.git/
+.gradle
+gradle
+out/
+Dockerfile
+
+### Python ###
+__pycache__
+venv

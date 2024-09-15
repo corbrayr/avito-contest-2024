@@ -1,0 +1,21 @@
+version: '3'
+services:
+  database:
+    image: postgres:16
+    container_name: tenders_db
+    env_file:
+      - .env
+    ports:
+      - 5432:5432
+
+  tenders:
+    build:
+     context: .
+    container_name: tenders_app
+    env_file:
+      - .env
+    command: ["/app/scripts/app.sh"]
+    ports:
+      - 8080:8080
+    depends_on:
+      - database
